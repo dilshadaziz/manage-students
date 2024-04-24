@@ -1,16 +1,8 @@
 // ignore_for_file: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
 
-import 'dart:io';
-
 import 'package:app/database/db_model.dart';
-import 'package:app/screen/studentdetails.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:file_picker/file_picker.dart';
-import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 ValueNotifier<List<StudentModel>> studentList = ValueNotifier([]);
 final collectionRef = firestore.collection('students'); // Replace 'students' with your actual collection name
