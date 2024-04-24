@@ -8,18 +8,23 @@ on:
 jobs:
   build:
     name: Build & Release
-    runs-on: windows-latest  # Changed to Windows runner
+    runs-on: windows-latest  # Build runs on a Windows runner
 
   deploy:
-    runs-on: windows-latest  # Changed to Windows runner
+    runs-on: windows-latest  # Deployment runs on a Windows runner
     steps:
       - uses: actions/checkout@v3  # Checks out your code from GitHub
       - uses: suborbital/flutter@v1  # Installs Flutter SDK
         with:
           flutter-version: 'latest'  # Using latest compatible Flutter version
       - uses: google/firebase-tools@v11  # Installs Firebase CLI
-      - run: echo "// FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}" >> %GITHUB_ENV%  # Adds service account key for Windows (using %)
-      - run: icacls %GITHUB_ENV% /grant Administrators:(OI)(CI)F  # Sets read permissions for the environment variable (security)
-      - run: firebase login --project ${{ secrets.FIREBASE_PROJECT_ID }}  # Logs in to Firebase using project ID and service account key
-      - run: flutter build web --release  # Builds the Flutter web app in release mode
-      - run: firebase deploy --only hosting  # Deploys the built web app to Firebase Hosting
+
+      # (Optional) Secret Check (adjust based on your CI platform)
+
+      - run: flutter build web --release
+        shell: bash  # Use a shell that captures exit codes
+        # Add error handling based on exit code (optional)
+
+      - run: firebase deploy --only hosting
+        shell: bash  # Use a shell that captures exit codes
+        # Add error handling based on exit code (optional)

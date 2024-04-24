@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:app/database/db_functions.dart';
 import 'package:app/database/db_model.dart';
 import 'package:app/screen/editstudent.dart';

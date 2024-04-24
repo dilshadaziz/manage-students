@@ -1,12 +1,7 @@
-import 'dart:io';
-import 'dart:typed_data';
 import 'package:app/database/db_functions.dart';
 import 'package:app/database/db_model.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 

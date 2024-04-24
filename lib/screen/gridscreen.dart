@@ -1,11 +1,6 @@
-import 'dart:io';
-import 'dart:ui_web';
 import 'package:app/database/db_functions.dart';
 import 'package:app/screen/studentdetails.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
 class StudentListGridView extends StatelessWidget {
   const StudentListGridView({Key? key}) : super(key: key);

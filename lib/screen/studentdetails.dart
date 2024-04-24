@@ -1,5 +1,3 @@
-import 'dart:io';
-import 'package:app/database/db_functions.dart';
 import 'package:flutter/material.dart';
 
 class StudentDetails extends StatelessWidget {

@@ -5,7 +5,6 @@ import 'package:app/screen/listscreen.dart';
 import 'package:app/screen/searchscreen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
 class HomeScreeen extends StatefulWidget {
   const HomeScreeen({super.key});
